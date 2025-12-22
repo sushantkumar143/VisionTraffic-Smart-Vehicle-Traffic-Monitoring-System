@@ -5,6 +5,17 @@
 ![Python](https://img.shields.io/badge/Python-3.9+-green)
 ![Status](https://img.shields.io/badge/Status-Production%20Ready-success)
 
+## 🎥 Project Demo
+
+<video src="version-2.0/output_annotated (2).mp4" 
+       controls 
+       loop 
+       muted 
+       playsinline 
+       width="100%">
+</video>
+
+
 An **Intelligent Transportation System (ITS)** built using **Predictive Analytics and Computer Vision**, developed as an academic project at  
 **Lovely Professional University**.
 

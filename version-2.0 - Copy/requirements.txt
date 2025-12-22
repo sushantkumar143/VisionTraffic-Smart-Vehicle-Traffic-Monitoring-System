@@ -1,0 +1,11 @@
+streamlit
+ultralytics
+opencv-python-headless
+pandas
+numpy
+openpyxl
+easyocr
+Pillow
+gTTS # For Voice Assistant (Text-to-Speech)
+fpdf # For simple PDF report generation (alternative to complex HTML/CSS/PDF)
+streamlit-pydantic # For UI elements (optional, can simplify forms)

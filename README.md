@@ -5,9 +5,11 @@
 ![Python](https://img.shields.io/badge/Python-3.9+-green)
 ![Status](https://img.shields.io/badge/Status-Production%20Ready-success)
 
-## 🎥 Project Demo
+<h2>🎥 Project Demo</h2>
 
-![Project Demo](assets/demo.gif)
+<img src="assets/demo.gif" 
+     alt="Traffic Violation Detection Demo"
+     width="100%" />
 
 
 

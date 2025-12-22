@@ -1,79 +1,157 @@
-# Advanced Vehicle Analytics & Traffic Violation Detection System
+# 🚦 Advanced Vehicle Analytics & Traffic Violation Detection System
 
-[cite_start]This repository contains the source code for an Intelligent Transportation System (ITS) developed as a Predictive Analytics project at Lovely Professional University[cite: 1, 16, 17]. [cite_start]The system leverages computer vision to monitor traffic, estimate vehicle speed, and detect violations in real-time[cite: 4, 69, 72].
+![YOLOv8](https://img.shields.io/badge/YOLOv8-Computer%20Vision-blue)
+![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-red)
+![Python](https://img.shields.io/badge/Python-3.9+-green)
+![Status](https://img.shields.io/badge/Status-Production%20Ready-success)
 
----
+An **Intelligent Transportation System (ITS)** built using **Predictive Analytics and Computer Vision**, developed as an academic project at  
+**Lovely Professional University**.
 
-## 🚀 Key Features
-
-* [cite_start]**Multi-Class Object Detection**: Detects and classifies 7 distinct classes: Car, Truck, Bus, Auto, Two-Wheeler, Plate, and Blur-Plate[cite: 79].
-* [cite_start]**Real-Time Speed Estimation**: Calculates velocity based on the Euclidean distance of centroids between frames[cite: 80, 570].
-* [cite_start]**Anomaly Detection**: Automatically flags overspeeding vehicles based on a configurable threshold (e.g., >80 km/h)[cite: 80, 571].
-* [cite_start]**Automatic License Plate Recognition (ALPR)**: Integrates OCR to read number plates of violating vehicles[cite: 81, 637].
-* [cite_start]**Strategic Reporting**: Generates automated PDF reports summarizing traffic flow dynamics and model robustness[cite: 85, 634, 635].
+This system performs **real-time vehicle detection, speed estimation, traffic violation detection, and license plate recognition**, all integrated into an interactive **Streamlit dashboard** with automated reporting.
 
 ---
 
-## 🛠️ Technology Stack
+## 🎥 Live Demo & Project Video
 
-* [cite_start]**Model**: YOLOv8 (Nano, Small, and Medium variants)[cite: 82, 197].
-* [cite_start]**Framework**: Ultralytics YOLOv8[cite: 200, 644].
-* [cite_start]**Interface**: Streamlit Dashboard[cite: 85, 568].
-* [cite_start]**Database**: MySQL & MS Excel for violation logging[cite: 85, 633].
-* [cite_start]**OCR**: EasyOCR[cite: 647].
+▶️ **Watch the full project demo here**  
+🔗 [View Project Video on LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7406932700533551105/)
 
 ---
 
-## 📊 Model Performance & Comparison
+## 📌 Key Features
 
-[cite_start]We evaluated three variants of the YOLOv8 model to find the optimal balance between accuracy and inference speed[cite: 82, 433].
+✅ **Multi-Class Vehicle Detection**  
+Detects and classifies **7 vehicle classes**:
+- Car  
+- Truck  
+- Bus  
+- Auto  
+- Two-Wheeler  
+- License Plate  
+- Blurred Plate  
 
-| Model Variant | Parameters (M) | mAP@50 (Accuracy) | Inference Speed (ms) | Remarks |
-| :--- | :--- | :--- | :--- | :--- |
-| **YOLOv8n (Nano)** | 3.2 M | 0.829 | 6.5 ms | [cite_start]**Selected**: Fastest, real-time capable [cite: 435, 439] |
-| **YOLOv8s (Small)** | 11.2 M | 0.841 | 12.8 ms | [cite_start]Good accuracy, slower [cite: 435] |
-| **YOLOv8m (Medium)** | 25.9 M | 0.855 | 22.4 ms | [cite_start]Best accuracy, too slow for CPU [cite: 435] |
+✅ **Real-Time Speed Estimation**  
+Speed calculated using centroid displacement between frames:
 
 
+✅ **Traffic Violation (Overspeeding) Detection**  
+Automatically flags vehicles exceeding a configurable speed threshold (e.g., **80 km/h**).
 
-### Best Model Metrics (YOLOv8n)
-* [cite_start]**Precision**: ~0.915 (High confidence in True Positives)[cite: 443].
-* [cite_start]**Recall**: ~0.90 (Low False Negatives)[cite: 444].
-* [cite_start]**mAP@50**: 0.829[cite: 445].
+✅ **Automatic License Plate Recognition (ALPR)**  
+OCR-based number plate extraction for violating vehicles.
 
+✅ **Strategic Traffic Analytics Reports**  
+Auto-generated **PDF reports** including:
+- Vehicle flow analysis  
+- Speed & violation trends  
+- Model confidence & robustness indicators  
+
+---
+
+## 🧠 Technology Stack
+
+| Component | Technology |
+|---------|-----------|
+| Model | YOLOv8 (Nano, Small, Medium tested) |
+| Framework | Ultralytics YOLOv8 |
+| Language | Python |
+| Dashboard | Streamlit |
+| OCR | EasyOCR |
+| Database | MySQL, MS Excel |
+| Visualization | OpenCV, Matplotlib |
+
+---
+
+## 📂 Dataset Overview
+
+**Vehicle Detection & License Plate Dataset (v1)**
+
+- 📸 ~960 annotated traffic images  
+- 🏷️ YOLO-format labels  
+- 🔀 Split:
+  - Train: 772  
+  - Validation: 127  
+  - Test: 61  
+
+Sources:
+- Kaggle  
+- Roboflow Universe  
+
+---
+
+## 🧪 Data Preprocessing
+
+- Image resizing to **640 × 640**
+- Pixel normalization (0–1)
+- Data augmentation:
+  - Mosaic augmentation
+  - HSV scaling
+  - Horizontal flipping
+
+---
+
+## 🤖 Model Performance
+
+After comparing multiple YOLOv8 variants, **YOLOv8n (Nano)** was selected.
+
+| Model | Parameters | mAP@50 | Inference Speed | Remarks |
+|------|-----------|--------|----------------|--------|
+| YOLOv8n | 3.2M | 0.829 | **6.5 ms** | ✅ Best for real-time |
+| YOLOv8s | 11.2M | 0.841 | 12.8 ms | Good accuracy |
+| YOLOv8m | 25.9M | 0.855 | 22.4 ms | Too slow for CPU |
+
+📌 **YOLOv8n offers the best balance between accuracy and real-time speed.**
+
+---
+
+## 🖥️ Project Interface
+
+### 📊 Streamlit Dashboard
+- Upload Image / Video
+- Live camera feed
+- Speed threshold controls
+- Real-time annotations
+- Downloadable PDF report
+
+📷 **Dashboard Preview**
+
+(Add image: assets/dashboard.png)
 
 
 ---
 
-## 🖼️ Dataset & Preprocessing
+## 📊 Automated Reporting
 
-[cite_start]The model was trained on a dataset of ~960 images containing diverse traffic scenarios[cite: 108].
-* [cite_start]**Source**: Roboflow Universe & Kaggle[cite: 90, 648].
-* [cite_start]**Augmentations**: Applied Mosaic Augmentation, HSV Scaling, and Random Flips to ensure model robustness under different lighting conditions[cite: 114, 117, 118, 119].
+The system generates **Strategic Traffic & Safety Reports** including:
 
-
-
----
-
-## 💻 Dashboard Preview
-
-[cite_start]The Streamlit interface provides a "Speed Limit Setter" and a live "Annotated Output" view[cite: 582, 597, 621].
-
-
+- 📈 Vehicle flow distribution  
+- 🚦 Speed & violation analysis  
+- 🔍 OCR-based license plate records  
+- 📊 Confidence & robustness metrics  
+- ✅ Actionable safety recommendations  
 
 ---
 
 ## 🔮 Future Scope
 
-* [cite_start]**Night Vision**: Training on thermal or low-light datasets[cite: 639].
-* [cite_start]**Edge Deployment**: Porting to Raspberry Pi or NVIDIA Jetson Nano[cite: 640].
-* [cite_start]**Predictive Accident Modeling**: Using LSTM networks to predict collisions based on trajectories[cite: 641].
-* [cite_start]**Security Features**: Adding helmet detection and triple riding alerts[cite: 642].
+- 🌙 Night-time & thermal vision detection  
+- ⚡ Edge deployment (Jetson Nano / Raspberry Pi)  
+- 🧠 Accident prediction using LSTM  
+- 🪖 Helmet detection & triple riding detection  
+- 🚓 Advanced traffic rule enforcement  
 
 ---
 
 ## 👥 Contributors
-* [cite_start]**Student**: Sushant Kumar (Reg No. 12311087) [cite: 7, 8]
-* [cite_start]**Mentor**: Dr. Tanima Thakur [cite: 12]
 
-**Project Links**: [GitHub](https://github.com/sushantkumar143/VisionTraffic-Smart-Vehicle-Traffic-Monitoring-System) | [cite_start][LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7406932700533551105/) [cite: 650, 651]
+### 👨‍💻 Student
+**Sushant Kumar**  
+B.Tech CSE, Lovely Professional University  
+Registration No: **12311087**
+
+### 👩‍🏫 Mentor
+**Dr. Tanima Thakur**  
+Assistant Professor, CSE/IT  
+Lovely Professional University
+

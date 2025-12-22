@@ -7,13 +7,8 @@
 
 ## 🎥 Project Demo
 
-<video src="version-2.0/output_annotated (2).mp4" 
-       controls 
-       loop 
-       muted 
-       playsinline 
-       width="100%">
-</video>
+![Project Demo](assets/demo.gif)
+
 
 
 An **Intelligent Transportation System (ITS)** built using **Predictive Analytics and Computer Vision**, developed as an academic project at  

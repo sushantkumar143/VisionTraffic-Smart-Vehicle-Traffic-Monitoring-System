@@ -9,7 +9,7 @@ services:
     environment:
       - MYSQL_HOST=db
       - MYSQL_USER=root
-      - MYSQL_PASSWORD=*sushant143*
+      - MYSQL_PASSWORD="*sushant143*"
       - MYSQL_DATABASE=vehicle_analytics_db
     volumes:
       - ./data:/app/data
@@ -23,7 +23,7 @@ services:
     restart: always
     environment:
       MYSQL_DATABASE: vehicle_analytics_db
-      MYSQL_ROOT_PASSWORD: *sushant143*
+      MYSQL_ROOT_PASSWORD: "*sushant143*"
     ports:
       - "3306:3306"
     volumes:
